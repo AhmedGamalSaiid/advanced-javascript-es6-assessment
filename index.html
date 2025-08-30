@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Advanced JavaScript & ES6 Concepts Assessment - Comprehensive evaluation of Advanced JavaScript & ES6 Concepts programming skills">
+    <meta name="keywords" content="JavaScript, programming, assessment, quiz, education">
+    <title>Advanced JavaScript & ES6 Concepts Assessment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="sr-only">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__title-container">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/2048px-Unofficial_JavaScript_logo_2.svg.png"
+                        alt="logo" class="header__logo" width="100">
+                    <div>
+                        <h1 class="header__title">
+                            Master Advanced JavaScript & ES6 Concepts
+                            <span style="color:#ffd700;">with Ahmed Gamal</span>
+                        </h1>
+                        <h4 class="header__subtitle">
+                            Comprehensive assessment for the Advanced JavaScript course.
+                        </h4>
+                    </div>
+
+                </div>
+                <div class="header__timer" id="timer" role="timer" aria-live="polite">
+                    <span class="timer__label">Time Remaining:</span>
+                    <span class="timer__display" id="timer-display">45:00</span>
+                </div>
+                <div class="header__theme-toggle">
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode"
+                        title="Toggle dark mode">
+                        <svg class="theme-toggle__icon theme-toggle__icon--sun" width="20" height="20"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <svg class="theme-toggle__icon theme-toggle__icon--moon" width="20" height="20"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" class="main" role="main">
+        <div class="container">
+
+            <!-- Welcome Screen -->
+            <section id="intro" class="welcome-screen" aria-labelledby="welcome-title">
+                <div class="welcome-card">
+                    <header class="welcome-card__header">
+                        <h2 id="welcome-title" class="welcome-card__title">Welcome to the dvanced JavaScript & ES6
+                            Concepts Assessment</h2>
+                        <p class="welcome-card__description">
+                            Test your dvanced JavaScript & ES6 Concepts programming knowledge with this comprehensive
+                            assessment covering 8
+                            units of material.
+                        </p>
+                    </header>
+
+                    <div class="welcome-card__body">
+                        <div class="assessment-details">
+                            <div class="detail-item">
+                                <strong>Questions:</strong> 72 total
+                            </div>
+                            <div class="detail-item">
+                                <strong>Time Limit:</strong> 45 minutes
+                            </div>
+                            <div class="detail-item">
+                                <strong>Units Covered:</strong> 8 programming units
+                            </div>
+                            <div class="detail-item">
+                                <strong>Question Types:</strong> Multiple choice, True/False, Short answer, Code
+                                analysis
+                            </div>
+                        </div>
+
+                        <form class="student-form" id="student-form" novalidate>
+                            <div class="form-group">
+                                <label for="student-name" class="form-label">
+                                    Full Name <span class="required" aria-label="required">*</span>
+                                </label>
+                                <input type="text" id="student-name" name="studentName" class="form-control" required
+                                    aria-describedby="name-error" placeholder="Enter your full name">
+                                <div id="name-error" class="form-error" role="alert" aria-live="polite"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="student-id" class="form-label">
+                                    Student ID <span class="optional">(optional)</span>
+                                </label>
+                                <input type="text" id="student-id" name="studentId" class="form-control"
+                                    placeholder="Enter your student ID">
+                            </div>
+
+                            <button type="submit" class="btn btn--primary btn--lg btn--full-width">
+                                Start Assessment
+                            </button>
+                        </form>
+
+                        <div class="instructions">
+                            <h3>Instructions:</h3>
+                            <ul>
+                                <li>Read each question carefully before answering</li>
+                                <li>You can navigate between questions using Previous/Next buttons</li>
+                                <li>Your progress is automatically saved</li>
+                                <li>Submit your assessment before time runs out</li>
+                                <li>You can review and change answers before final submission</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quiz Screen -->
+            <section id="quiz" class="quiz-screen hidden" aria-labelledby="quiz-title">
+                <div class="quiz-container">
+                    <!-- Progress Bar -->
+                    <div class="progress-section" role="progressbar" aria-labelledby="progress-label">
+                        <div class="progress-label" id="progress-label">
+                            Question <span id="current-question">1</span> of <span id="total-questions">72</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-bar__fill" id="progress-fill"></div>
+                        </div>
+                        <div class="progress-stats">
+                            <span class="answered-count" id="answered-count">0 answered</span>
+                        </div>
+                    </div>
+
+                    <!-- Question Card -->
+                    <article class="question-card" id="question-card">
+                        <header class="question-card__header">
+                            <div class="question-meta">
+                                <span class="question-unit" id="question-unit">Unit 1</span>
+                                <span class="question-type" id="question-type">Multiple Choice</span>
+                            </div>
+                        </header>
+
+                        <div class="question-card__body">
+                            <div class="question-content" id="question-content">
+                                <div class="question-text" id="question-text"></div>
+                                <div class="question-options" id="question-options"></div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Navigation -->
+                    <nav class="quiz-navigation" role="navigation" aria-label="Question navigation">
+                        <div class="nav-buttons">
+                            <button type="button" class="btn btn--secondary" id="prev-btn" disabled
+                                aria-label="Go to previous question">
+                                ← Previous
+                            </button>
+
+                            <div class="nav-center">
+                                <button type="button" class="btn btn--outline" id="review-btn"
+                                    aria-label="Review all questions">
+                                    Review Questions
+                                </button>
+                            </div>
+
+                            <button type="button" class="btn btn--primary" id="next-btn"
+                                aria-label="Go to next question">
+                                Next →
+                            </button>
+
+                            <button type="button" class="btn btn--primary hidden" id="submit-btn"
+                                aria-label="Submit assessment">
+                                Submit Assessment
+                            </button>
+                        </div>
+                    </nav>
+                </div>
+            </section>
+
+            <!-- Review Screen -->
+            <section id="review-screen" class="review-screen hidden" aria-labelledby="review-title">
+                <div class="review-container">
+                    <header class="review-header">
+                        <h2 id="review-title">Review Your Answers</h2>
+                        <p class="review-description">
+                            Review all questions before final submission. Unanswered questions are highlighted.
+                        </p>
+                    </header>
+
+                    <div class="review-grid" id="review-grid">
+                        <!-- Review items will be populated by JavaScript -->
+                    </div>
+
+                    <nav class="review-navigation">
+                        <button type="button" class="btn btn--secondary" id="back-to-quiz">
+                            ← Back to Quiz
+                        </button>
+                        <button type="button" class="btn btn--primary" id="final-submit">
+                            Submit Assessment
+                        </button>
+                    </nav>
+                </div>
+            </section>
+
+            <!-- Results Screen -->
+            <section id="results" class="results-screen hidden" aria-labelledby="results-title">
+                <div class="results-container">
+                    <header class="results-header">
+                        <div class="results-icon">
+                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22,4 12,14.01 9,11.01"></polyline>
+                            </svg>
+                        </div>
+                        <h2 id="results-title">Assessment Complete!</h2>
+                        <div class="results-score">
+                            <div class="score-display">
+                                <span class="score-number" id="final-score">0</span>
+                                <span class="score-total">/ 72</span>
+                            </div>
+                            <div class="score-percentage" id="score-percentage">0%</div>
+                        </div>
+                    </header>
+
+                    <div class="results-body">
+                        <div class="results-summary" id="results-summary">
+                            <!-- Summary will be populated by JavaScript -->
+                        </div>
+
+                        <div class="results-breakdown" id="results-breakdown">
+                            <!-- Detailed breakdown will be populated by JavaScript -->
+                        </div>
+
+                        <div class="results-actions">
+                            <button type="button" class="btn btn--primary" id="download-results">
+                                📄 Download Results (CSV)
+                            </button>
+                            <div class="save-status" id="save-status">
+                                <span class="status status--info">Saving to Google Sheets...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay hidden" id="loading-overlay" aria-hidden="true">
+        <div class="loading-content">
+            <div class="loading-spinner" aria-label="Loading"></div>
+            <p class="loading-text">Submitting your assessment...</p>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div class="modal hidden" id="submit-modal" role="dialog" aria-labelledby="modal-title" aria-modal="true">
+        <div class="modal__backdrop"></div>
+        <div class="modal__content">
+            <header class="modal__header">
+                <h3 id="modal-title">Confirm Submission</h3>
+            </header>
+            <div class="modal__body">
+                <p>Are you sure you want to submit your assessment? This action cannot be undone.</p>
+                <div class="modal__stats" id="modal-stats">
+                    <!-- Stats will be populated by JavaScript -->
+                </div>
+            </div>
+            <div class="modal__footer">
+                <button type="button" class="btn btn--secondary" id="cancel-submit">
+                    Cancel
+                </button>
+                <button type="button" class="btn btn--primary" id="confirm-submit">
+                    Submit Assessment
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
